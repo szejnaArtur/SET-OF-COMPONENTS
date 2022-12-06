@@ -1,7 +1,7 @@
-import Input from '../../../component/input/input-label-animation';
+import Icons from '../../../component/button/icon-with-hover-effects';
 
-const InputLabelAnimation = () => {
-    return (
+const IconWithHoverEffects = () => {
+    return(
         <div style={{
             margin: 0,
             padding: 0,
@@ -9,13 +9,12 @@ const InputLabelAnimation = () => {
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: '100vh',
-            background: 'linear-gradient(45deg, #2196f3, #ff4685)',
             boxSizing: 'border-box',
             fontFamily: 'Poppins, sans-serif'
         }}>
-            <Input type={'text'} text={'Full Name'}/>
+            <Icons />
         </div>
     )
 }
 
-export default InputLabelAnimation;
+export default IconWithHoverEffects;

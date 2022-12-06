@@ -1,11 +1,11 @@
 import classes from './input-label-animation.module.css';
 
-const InputLabelAnimation = () => {
+const InputLabelAnimation = ({type, text}) => {
     return (
         <div className={classes.container}>
             <div className={classes.inputBox}>
-                <input type='text' required='required'/>
-                <span>Full Name</span>
+                <input type={type} required='required'/>
+                <span>{text}</span>
                 <i></i>
             </div>
         </div>

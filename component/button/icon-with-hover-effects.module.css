@@ -1,0 +1,93 @@
+.container {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.param {
+    --i: #ff9966;
+    --j: #ff5e62;
+}
+
+.container li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+
+.container li:hover {
+    width: 180px;
+}
+
+.container li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container li:hover::before {
+    opacity: 1;
+}
+
+.container li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: linear-gradient(45deg, var(--i), var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+
+.container li:hover::after {
+    opacity: 0.5;
+}
+
+.icon{
+    color: #555;
+    font-size: 1.5em;
+    transition: 0.5s;
+    position: relative;
+    top: 2px;
+    left: 1px;
+}
+
+.container li:hover .icon{
+    transform: scale(0);
+    transition-delay: 0.25s;
+}
+
+.container li span{
+    position: absolute;
+}
+
+.container li .title{
+    color: #555;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.container li:hover .title{
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
