@@ -6,7 +6,7 @@ const LoadingOrbits = (props) => {
             <div className={classes.ring}></div>
             <div className={classes.ring}></div>
             <div className={classes.ring}></div>
-            <p>Loading...</p>
+            <p>{props.text}</p>
         </div>
     )
 }
