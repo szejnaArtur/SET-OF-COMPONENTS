@@ -1,21 +1,23 @@
-import Input from '../../../component/input/input-label-animation';
+import Icons from '../../../component/button/buttons-with-hover-effects';
+import IconGen from '../../../component/button/button-share';
 
-const InputLabelAnimation = () => {
-    return (
+const Index = () => {
+    return(
         <div style={{
             margin: 0,
             padding: 0,
             display: 'flex',
+            flexDirection: "column",
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: '100vh',
-            background: 'linear-gradient(45deg, #2196f3, #ff4685)',
             boxSizing: 'border-box',
             fontFamily: 'Poppins, sans-serif'
         }}>
-            <Input type={'text'} text={'Full Name'}/>
+            <Icons />
+            <IconGen />
         </div>
     )
 }
 
-export default InputLabelAnimation;
+export default Index;

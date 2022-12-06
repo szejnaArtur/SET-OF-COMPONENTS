@@ -1,7 +1,7 @@
-import classes from './icon-with-hover-effects.module.css';
+import classes from './buttons-with-hover-effects.module.css';
 import {FaHome, FaUser, FaRegCommentDots, FaHeart, FaShoppingCart} from 'react-icons/fa'
 
-const IconWithHoverEffects = (props) => {
+const ButtonsWithHoverEffects = (props) => {
     return(
         <ul className={classes.container}>
             <li className={classes.param}>
@@ -38,4 +38,4 @@ const IconWithHoverEffects = (props) => {
     )
 }
 
-export default IconWithHoverEffects;
+export default ButtonsWithHoverEffects;

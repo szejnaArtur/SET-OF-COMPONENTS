@@ -1,0 +1,78 @@
+.btn{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+}
+.btn div:nth-child(1){
+    height: 60px;
+    width: 60px;
+    background: #16a085;
+    font-size: 25px;
+    color: #e9fcf8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #159d82;
+}
+
+.icon{
+    position: relative;
+    right:1px;
+}
+
+.btn:hover div:nth-child(1){
+    background: #159d82;
+    border-color: #12876f;
+}
+
+.btn div:nth-child(2),
+.btn div:nth-child(3),
+.btn div:nth-child(4){
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+    color: #e9fcf8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer !important;
+    border: 1px solid transparent;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.btn div:nth-child(3){
+    transition-delay: 0.1s;
+}
+
+.btn div:nth-child(4){
+    transition-delay: 0.2s;
+}
+
+.showFirstBtn{
+    right: 80px !important;
+    bottom: 0 !important;
+    background: #e60000;
+    transform: scale(1) !important;
+}
+
+.btn .showSecondBtn{
+    right: 65px !important;
+    bottom: 65px !important;
+    background: #e1306c;
+    transform: scale(1) !important;
+}
+
+.btn .showThirdBtn{
+    right: 0 !important;
+    bottom: 80px !important;
+    background: #1da1f2;
+    transform: scale(1) !important;
+}
