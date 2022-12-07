@@ -1,5 +1,6 @@
-import Icons from '../../../component/button/buttons-with-hover-effects';
-import IconGen from '../../../component/button/button-share';
+import Buttons from '../../../component/button/buttons-with-hover-effects';
+import ButtonGen from '../../../component/button/button-share';
+import ButtonRightArrowAnimated from "../../../component/button/buttons-with-arrow-animation/button-right-arrow-animated";
 
 const Index = () => {
     return(
@@ -12,10 +13,12 @@ const Index = () => {
             alignItems: 'center',
             minHeight: '100vh',
             boxSizing: 'border-box',
-            fontFamily: 'Poppins, sans-serif'
+            fontFamily: 'Poppins, sans-serif',
+            gap: '40px'
         }}>
-            <Icons />
-            <IconGen />
+            <Buttons />
+            <ButtonRightArrowAnimated>Napisz do nas</ButtonRightArrowAnimated>
+            <ButtonGen />
         </div>
     )
 }
