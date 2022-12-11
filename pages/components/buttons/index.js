@@ -1,6 +1,7 @@
 import Buttons from '../../../component/button/buttons-with-hover-effects';
 import ButtonGen from '../../../component/button/button-share';
 import ButtonRightArrowAnimated from "../../../component/button/buttons-with-arrow-animation/button-right-arrow-animated";
+import MenuButton from "../../../component/button/menu-buttons/menu-button";
 
 const Index = () => {
     return(
@@ -16,6 +17,7 @@ const Index = () => {
             fontFamily: 'Poppins, sans-serif',
             gap: '40px'
         }}>
+            <MenuButton />
             <Buttons />
             <ButtonRightArrowAnimated>Napisz do nas</ButtonRightArrowAnimated>
             <ButtonGen />
