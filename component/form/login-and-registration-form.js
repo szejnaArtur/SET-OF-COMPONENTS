@@ -4,14 +4,19 @@ import {useEffect, useState} from "react";
 const LoginAndRegistrationForm = () => {
 
     const [isActive, setIsActive] = useState(false);
-    const [width, setWidth] = useState(0);
+    const [isHorizontal, setIsHorizontal] = useState(null);
+
+    const updateHandler = () => {
+        if (window.innerWidth < 992) {
+            setIsHorizontal(true);
+        } else {
+            setIsHorizontal(false);
+        }
+    }
 
     useEffect(() => {
-        const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        updateHandler();
+        window.addEventListener('resize', updateHandler);
     }, [])
 
     return (
@@ -24,7 +29,7 @@ const LoginAndRegistrationForm = () => {
                             Sign in
                         </button>
                     </div>
-                    <div className={classes.box} style={width < 992 ? {top: '0'} : {}}>
+                    <div className={classes.box} style={isHorizontal ? {top: 0} : null}>
                         <h2>Don't Have an Account ?</h2>
                         <button onClick={() => setIsActive(prevState => !prevState)}>
                             Sign up
@@ -32,13 +37,22 @@ const LoginAndRegistrationForm = () => {
                     </div>
                 </div>
                 <div className={classes.formBx} style={
-                    !isActive ? width < 992 ? {top: '150px'} : {top: 0} : width > 992 ? {left: '50%'} : {left: 0}
+                    isHorizontal ? (
+                        isActive ? {
+                            top: 0
+                        } : {
+                            top: '150px'
+                        }) : (
+                        isActive ? {
+                            left: '50%'
+                        } : {
+                            left: 0
+                        }
+                    )
                 }>
-                    <div className={classes.form} style={isActive ? {left: '-100%', transitionDelay: '0'} : {
-                        left: '0',
-                        transitionDelay: '0.25s'
-                    }}>
-                        <form>
+                    <div className={classes.form}
+                         style={isActive ? {left: '-100%', transitionDelay: '0.25s'} : {left: 0, transitionDelay: '0'}}>
+                        <form className={classes.signin}>
                             <h3>Sign In</h3>
                             <input type="text" placeholder="Username"/>
                             <input type="password" placeholder="Password"/>
@@ -47,11 +61,9 @@ const LoginAndRegistrationForm = () => {
                         </form>
                     </div>
 
-                    <div className={classes.form} style={isActive ? {left: '0', transitionDelay: '0.25s'} : {
-                        left: '100%',
-                        transitionDelay: '0'
-                    }}>
-                        <form>
+                    <div className={classes.form}
+                         style={isActive ? {left: 0, transitionDelay: '0'} : {left: '100%', transitionDelay: '0.25s'}}>
+                        <form className={classes.signup}>
                             <h3>Sign Up</h3>
                             <input type="text" placeholder="Username"/>
                             <input type="email" placeholder="Email"/>
